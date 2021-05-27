@@ -48,6 +48,7 @@ class _VideoPlayerScreenState extends State<_VideoAppState>{
     _controller.setLooping(true);
 
     super.initState();
+    startVideo();
   }
 
   @override
@@ -85,5 +86,9 @@ class _VideoPlayerScreenState extends State<_VideoAppState>{
     _controller.dispose();
 
     super.dispose();
+  }
+
+  Future<void>startVideo() {
+    return Future.delayed(Duration(seconds: 2), () => _controller.play());
   }
 }
