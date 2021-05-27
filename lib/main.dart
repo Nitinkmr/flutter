@@ -1,29 +1,20 @@
-import 'package:flutter/material.dart';
-//import 'package:video_app/pages/MyLiveStream.dart';
 import 'package:video_app/pages/UserList.dart';
 import 'package:video_player/video_player.dart';
-
+import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-
-  routes: {
-    '/' : (context) => MyLiveStream(),
-    '/video': (context) => UserList()
-  },
+  routes:{
+    '/video': (context) =>VideoApp(),
+    '/': (context) => UserList()
+  }
 ));
 
-// class VideoApp extends StatefulWidget {
-//   @override
-//   _VideoAppState createState() => _VideoAppState();
-// }
-
-class MyLiveStream extends StatefulWidget {
-
+class VideoApp extends StatefulWidget {
   @override
-  _MyLiveStreamState createState() => _MyLiveStreamState();
+  _VideoAppState createState() => _VideoAppState();
 }
 
-class _MyLiveStreamState extends State<MyLiveStream> {
+class _VideoAppState extends State<VideoApp> {
   late VideoPlayerController _controller;
   int duration = 200;
 
@@ -78,4 +69,5 @@ class _MyLiveStreamState extends State<MyLiveStream> {
     super.dispose();
     _controller.dispose();
   }
+
 }
